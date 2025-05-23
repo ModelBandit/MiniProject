@@ -26,10 +26,43 @@ public class SmartPhone {
 		System.out.print("주소:");
 		String address = scanner.nextLine();
 
-		System.out.print("그룹(친구/가족):");
+		System.out.print("그룹:");
 		String group = scanner.nextLine();
 
 		return new Addr(name, phone, email, address, group);
+	}
+	// company
+	public CompanyAddr inputCompanyAddrData() {
+		Addr addr = inputAddrData();
+		
+		System.out.print("회사이름: ");
+		String company = scanner.nextLine();
+		
+		System.out.print("부서이름: ");
+		String department = scanner.nextLine();
+		
+		System.out.print("직급: ");
+		String level = scanner.nextLine();
+		
+		return new CompanyAddr(addr.getName(), addr.getPhone(), addr.getEmail(), addr.getAddress(), addr.getGroup(),
+				company, department, level);
+	}
+	
+	//customer
+	public CustomerAddr inputCustomerAddrData() {
+		Addr addr = inputAddrData();
+		
+		System.out.print("거래처이름: ");
+		String customer = scanner.nextLine();
+		
+		System.out.print("품목이름: ");
+		String product = scanner.nextLine();
+		
+		System.out.print("직급: ");
+		String level = scanner.nextLine();
+		
+		return new CustomerAddr(addr.getName(), addr.getPhone(), addr.getEmail(), addr.getAddress(), addr.getGroup(),
+				customer, product, level);
 	}
 
 	// 저장
@@ -51,7 +84,7 @@ public class SmartPhone {
 
 	public void printAllAddr() {
 		for (int i = 0; i < addrArr.length; ++i) {
-			if (addrArr[i] != null)
+			if (addrArr[i] == null)
 				break;
 			
 			printAddr(addrArr[i]);

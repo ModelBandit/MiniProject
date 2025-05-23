@@ -20,7 +20,7 @@ public class Addr {
 		System.out.printf("전화번호: %s\n", phone);
 		System.out.printf("이메일: %s\n", email);
 		System.out.printf("주소: %s\n", address);
-		System.out.printf("그룹(친구/가족): %s\n", group);
+		System.out.printf("그룹: %s\n", group);
 	}
 	
 	public String getName() {
