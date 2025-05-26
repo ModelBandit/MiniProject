@@ -123,5 +123,13 @@ public class SmartPhone {
 			}
 		}
 	}
+	
+	//#4 ShowData Interface
+	public void printContact(String name) {
+		for (int i = 0; i < addrArr.length; ++i) {
+			if (addrArr[i] != null && addrArr[i].getName().equals(name))
+				addrArr[i].showData();
+		}
+	}
 
 }
